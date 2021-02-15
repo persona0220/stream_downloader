@@ -5,12 +5,12 @@ f2 = open("links", "w")
 
 lines = f.readlines()
 
-header = "https://a01-g-naver-vod.pstatic.net/navertv/c/read/v2/VOD_ALPHA/navertv_2021_02_14_227/hls/"
-
-footer = "?__gda__=1613350993_fadb6a8f4987d19edcdfcaf33cb57400"
+header = "https://link-to-ts-files/"
+footer = ""
 
 for line in lines:
-
+    # read from chunklist and concat with header and footer
+    # if condition needs to be modified based on platform
     if line.startswith('1080'):
         link = header + line + footer
         f2.write(link)
